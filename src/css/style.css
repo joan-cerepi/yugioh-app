@@ -1,0 +1,171 @@
+:root {
+    /* Fonts */
+    --heading-font: Jaro, sans-serif;
+    --regular-font: Oswald, sans-serif;
+}
+
+/* *********************** GENERIC STYLES *********************** */
+
+* {
+    box-sizing: border-box;
+    font-family: var(--regular-font);
+}
+
+html {
+    background-color: royalblue;
+}
+
+body {
+    max-width: 1500px;
+    margin: 0 auto;
+    background-color: #ffffff;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--heading-font);
+}
+
+/* *********************** HEADER *********************** */
+
+.main-header {
+    padding: 1.5rem 2rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid gray;
+}
+
+.menu-icon {
+    display: inline-block;
+    cursor: pointer;
+}
+
+.main-nav {
+    display: none;
+    border-top: 2px solid gray;
+    border-bottom: 2px solid gray;
+}
+
+.main-nav a {
+    padding: 2rem;
+    text-decoration: none;
+}
+
+.show {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    text-align: center;
+    justify-content: center;
+    border-top: none;
+}
+  
+.bar1, .bar2, .bar3 {
+    width: 35px;
+    height: 5px;
+    background-color: #333;
+    margin: 6px 0;
+    transition: 0.4s;
+}
+
+/* Rotate first bar */
+.change .bar1 {
+    transform: translate(0, 11px) rotate(-45deg);
+}
+
+/* Fade out the second bar */
+.change .bar2 {opacity: 0;}
+
+/* Rotate last bar */
+.change .bar3 {
+    transform: translate(0, -11px) rotate(45deg);
+}
+
+.logo-wrapper {
+    font-size: 4.5rem;
+}
+
+.logo {
+    text-decoration: none;
+    background: linear-gradient(to bottom right, orange, crimson);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 700;
+}
+
+/* *********************** HOMEPAGE *********************** */
+
+.hero-wrapper {
+    margin: 2rem 0;
+    position: relative;
+}
+
+.hero-image {
+    width: 100%;
+    height: auto;
+}
+
+.call-to-action-btn {
+    position: absolute;
+    right: 1.5rem;
+    bottom: 1.5rem;
+    background-color: #000;
+    text-align: center;
+    padding: 0.5rem;
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.5rem;
+    transition: 0.4s ease-in-out;
+    border-radius: 25%;
+}
+
+.call-to-action-btn:hover {
+    color: #000;
+    background-color: #fff;
+}
+
+.main-heading {
+    text-align: center;
+}
+
+.card-of-day {
+    text-align: center;
+    margin: 4rem 0;
+}
+
+.card-of-day h2 {
+    padding: 0.5rem 1.5rem;
+}
+
+footer {
+    text-align: center;
+}
+
+@media screen and (min-width: 1062px) {
+    .randomizer {
+        text-align: center;
+    }
+
+    .random-cards {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .menu-icon {
+        display: none;
+    }
+
+    .main-nav {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        border-top: none;
+    }
+}

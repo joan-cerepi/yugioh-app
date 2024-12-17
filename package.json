@@ -1,0 +1,54 @@
+{
+  "name": "yugioh-app",
+  "version": "1.0.0",
+  "description": "Comprehensive Yu-Gi-Oh! card database, deck builder, and information hub for duelists of all levels.",
+  "keywords": [
+    "yugioh",
+    "yu-gi-oh",
+    "card-database",
+    "deck-builder",
+    "trading-card-game",
+    "card-game",
+    "duel-monsters",
+    "card-search",
+    "tcg",
+    "konami",
+    "card-collection",
+    "deck-builder-tool",
+    "card-info",
+    "card-database",
+    "dueling",
+    "card-game-tool"
+  ],
+  "main": "main.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build --emptyOutDir",
+    "preview": "vite preview",
+    "lint": "eslint *.js src/**/*.js",
+    "format": "prettier --ignore-path ./.gitignore --write \"./**/*.{html,json,js,mjs,ts,css}\"",
+    "test": "jest"
+  },
+  "author": "Joan Cerepi",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^8.56.0",
+    "eslint-config-prettier": "^8.10.0",
+    "eslint-plugin-import": "^2.29.1",
+    "jest": "^29.7.0",
+    "prettier": "^3.2.5",
+    "vite": "^5.4.7"
+  },
+  "babel": {
+    "presets": [
+      "@babel/preset-env"
+    ]
+  },
+  "browserslist": [
+    "last 3 and_chr versions",
+    "last 3 chrome versions",
+    "last 3 opera versions",
+    "last 3 ios_saf versions",
+    "last 3 safari versions"
+  ]
+}
