@@ -19,8 +19,8 @@ export default class CardData {
 
     async searchByCardName(name) {
         const allCardInfo = await this.getAllCardInfo();
-        const cardByName = allCardInfo.filter(cardName => cardName.name.toLowerCase() === name.toLowerCase())[0];
-        return cardByName;
+        const cardsByName = allCardInfo.filter(cardName => cardName.name.toLowerCase().includes(name.toLowerCase()));
+        return cardsByName;
     }
 
     async filterByType(type) {
@@ -45,7 +45,7 @@ export default class CardData {
 
     async getCardById(id) {
         const allCardInfo = await this.getAllCardInfo();
-        const card = allCardInfo.filter(card => card.id === id);
+        const card = allCardInfo.filter(card => card.id === id)[0];
         return card;
     }
 
