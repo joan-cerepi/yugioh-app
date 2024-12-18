@@ -8,6 +8,7 @@ async function loadCardDetails() {
     const detailsContainer = document.getElementById('card-details');
     const id = Number(params.get('id'));
     const card = await allCardData.getCardById(id);
+    document.title += ` | ${card.name}`;
     detailsContainer.innerHTML = detailsTemplate(card);
 }
 
