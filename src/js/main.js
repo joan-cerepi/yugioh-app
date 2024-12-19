@@ -13,7 +13,7 @@ function cardTemplate(card) {
         <figure>
             <picture>
                 <source srcset="/images/regular/${card.id}.jpg" media="(min-width: 800px)">
-                <a href="/card/?id=${card.id}"><img src="/images/small/${card.id}.jpg" alt="${card.name}" class="cod-image"></a>
+                <a href="/card/?id=${card.id}"><img src="/images/small/${card.id}.jpg" alt="${card.name}" loading="lazy" width="268" height="391" class="cod-image"></a>
             </picture>
             <figcaption>${card.name}</figcaption>
         </figure>
