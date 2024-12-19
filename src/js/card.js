@@ -1,4 +1,4 @@
-import { loadCommonElements } from "./utils.mjs";
+import { addToDeck, loadCommonElements } from "./utils.mjs";
 import CardData from "./CardData.mjs";
 
 const allCardData = new CardData('/json/cardinfo.json');
@@ -10,6 +10,14 @@ async function loadCardDetails() {
     const card = await allCardData.getCardById(id);
     document.title += ` | ${card.name}`;
     detailsContainer.innerHTML = detailsTemplate(card);
+
+    const addToMainBtn = document.getElementById('add-to-main');
+    const addToSideBtn = document.getElementById('add-to-side');
+    const addToExtraBtn = document.getElementById('add-to-extra');
+
+    addToMainBtn.addEventListener('click', () => addToDeck('main', card));
+    addToSideBtn.addEventListener('click', () => addToDeck('side', card));
+    addToExtraBtn.addEventListener('click', () => addToDeck('extra', card));
 }
 
 function detailsTemplate(card) {
@@ -23,6 +31,9 @@ function detailsTemplate(card) {
             <p>Name:<br>${card.name}</p>
             <p>Type:<br>${card.type} (${card.humanReadableCardType})</p>
             <p>Description:<br>${card.desc}</p>
+            <button id="add-to-main">Add To Main</button>
+            <button id="add-to-side">Add To Side</button>
+            <button id="add-to-extra">Add To Extra</button>
         </div>
     `;
     return html;

@@ -223,6 +223,29 @@ label[for="card-search"]::after {
     text-align: center;
 }
 
+/* *********************** DECK PAGE *********************** */
+.deck-title {
+    padding: 2rem;
+}
+
+.deck h2,
+.deck div {
+    max-width: 85%;
+    margin: 2rem auto;
+}
+
+.deck div {
+    display: flex;
+    align-items: center;
+    min-height: 300px;
+    border: 2px solid #000;
+}
+
+.img-container img {
+    width: 100px;
+    height: auto;
+}
+
 @media screen and (min-width: 650px) {
     .logo-wrapper {
         font-size: 4.5rem;

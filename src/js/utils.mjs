@@ -1,7 +1,7 @@
 import setupNavigation from "./navigation.js";
 
 export function getLocalStorage(key) {
-    return JSON.parse(localStorage.getItem(key));
+    return JSON.parse(localStorage.getItem(key)) || [];
 }
 
 export function setLocalStorage(key, val) {
@@ -24,6 +24,16 @@ export async function loadCommonElements() {
     nav.innerHTML = navTemplate;
 
     setupNavigation();
+}
+
+export function addToDeck(deckName, card) {
+    const cards = getLocalStorage(deckName.toLowerCase());
+    if (cards.length) {  
+        cards.push(card);
+        setLocalStorage(deckName, cards);
+    } else {
+        setLocalStorage(deckName, [ card ]);
+    }
 }
 
 async function loadTemplate(path) {
